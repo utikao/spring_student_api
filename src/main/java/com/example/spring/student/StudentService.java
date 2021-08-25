@@ -10,17 +10,15 @@ import java.util.List;
 
 @Service
 public class StudentService {
-    @GetMapping
-    public List<Student> getStudents(){
-        return List.of(
-                new Student(
-                        1L,
-                        "James",
-                        "James@gmail.com",
-                        LocalDate.of(2003, Month.MARCH,28),
-                        18
 
-                )
-        );
+
+    private final StudentRepository studentRepository;
+
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getStudents(){
+        return studentRepository.findAll();
     }
 }
