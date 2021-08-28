@@ -23,6 +23,7 @@ public class Student {
     )
     private Long id;
     private String name;
+    private String lastName;
     private String email;
     private LocalDate dob;
     @Transient
@@ -33,18 +34,22 @@ public class Student {
 
     public Student(Long id,
                    String name,
+                   String lastName,
                    String email,
                    LocalDate dob) {
         this.id = id;
         this.name = name;
+        this.lastName = lastName;
         this.email = email;
         this.dob = dob;
     }
 
     public Student(String name,
+                   String lastName,
                    String email,
                    LocalDate dob) {
         this.name = name;
+        this.lastName = lastName;
         this.email = email;
         this.dob = dob;
 
@@ -60,6 +65,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {
@@ -83,9 +96,12 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", dob=" + dob +
                 ", age=" + age +
                 '}';
     }
+
+
 }
