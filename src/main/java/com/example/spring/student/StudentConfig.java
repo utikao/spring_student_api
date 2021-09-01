@@ -33,7 +33,7 @@ public class StudentConfig {
             );
 
             repository.saveAll(
-                    List.of(james,alex)
+                    List.of()
             );
 
         };
